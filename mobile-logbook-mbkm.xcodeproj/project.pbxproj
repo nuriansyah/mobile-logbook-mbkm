@@ -1,0 +1,712 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6303951C297A8AC800DFB243 /* AddReportUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6303951B297A8AC800DFB243 /* AddReportUIView.swift */; };
+		6303951E297AA76E00DFB243 /* DetailReportingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6303951D297AA76E00DFB243 /* DetailReportingUIView.swift */; };
+		63039520297AB87100DFB243 /* DataKampusMerdekaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6303951F297AB87100DFB243 /* DataKampusMerdekaUIView.swift */; };
+		63039522297AC57C00DFB243 /* EditReportingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63039521297AC57C00DFB243 /* EditReportingUIView.swift */; };
+		630E7135298A51460020E938 /* LoginMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E7134298A51460020E938 /* LoginMahasiswaUIView.swift */; };
+		63414F70297B7307003F9CD6 /* LoginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63414F6F297B7307003F9CD6 /* LoginUIView.swift */; };
+		63414F72297BD50E003F9CD6 /* ForgotPasswordUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63414F71297BD50E003F9CD6 /* ForgotPasswordUIView.swift */; };
+		63414F74297BE470003F9CD6 /* VerifyCodeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63414F73297BE470003F9CD6 /* VerifyCodeUIView.swift */; };
+		63414F76297BE99C003F9CD6 /* NewPasswordUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63414F75297BE99C003F9CD6 /* NewPasswordUIView.swift */; };
+		635F828C297675AA00E1FA47 /* mobile_logbook_mbkmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F828B297675AA00E1FA47 /* mobile_logbook_mbkmApp.swift */; };
+		635F828E297675AA00E1FA47 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F828D297675AA00E1FA47 /* ContentView.swift */; };
+		635F8290297675AC00E1FA47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635F828F297675AC00E1FA47 /* Assets.xcassets */; };
+		635F8293297675AC00E1FA47 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635F8292297675AC00E1FA47 /* Preview Assets.xcassets */; };
+		635F829D297675AC00E1FA47 /* mobile_logbook_mbkmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F829C297675AC00E1FA47 /* mobile_logbook_mbkmTests.swift */; };
+		635F82A7297675AC00E1FA47 /* mobile_logbook_mbkmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F82A6297675AC00E1FA47 /* mobile_logbook_mbkmUITests.swift */; };
+		635F82A9297675AC00E1FA47 /* mobile_logbook_mbkmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F82A8297675AC00E1FA47 /* mobile_logbook_mbkmUITestsLaunchTests.swift */; };
+		635F82B82976770F00E1FA47 /* HomeDosenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F82B72976770F00E1FA47 /* HomeDosenUIView.swift */; };
+		635F82C029767F2E00E1FA47 /* ListMentorshipUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F82BF29767F2E00E1FA47 /* ListMentorshipUIView.swift */; };
+		636D5E092978F71E007C0F09 /* NotificationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E082978F71E007C0F09 /* NotificationUIView.swift */; };
+		636D5E0B2978FDFD007C0F09 /* ProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E0A2978FDFD007C0F09 /* ProfileUIView.swift */; };
+		636D5E0E29792866007C0F09 /* HomeMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E0D29792866007C0F09 /* HomeMahasiswaUIView.swift */; };
+		636D5E10297968AA007C0F09 /* HomeContentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E0F297968AA007C0F09 /* HomeContentUIView.swift */; };
+		636D5E1229798209007C0F09 /* ProfileMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E1129798209007C0F09 /* ProfileMahasiswaUIView.swift */; };
+		63B832422983C5A700D10B62 /* SelectLoginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B832412983C5A700D10B62 /* SelectLoginUIView.swift */; };
+		63C161232984D6AE00DDED40 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C161222984D6AD00DDED40 /* LoginViewModel.swift */; };
+		63C161262984D73200DDED40 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C161252984D73200DDED40 /* Services.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		635F8299297675AC00E1FA47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 635F8280297675AA00E1FA47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 635F8287297675AA00E1FA47;
+			remoteInfo = "mobile-logbook-mbkm";
+		};
+		635F82A3297675AC00E1FA47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 635F8280297675AA00E1FA47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 635F8287297675AA00E1FA47;
+			remoteInfo = "mobile-logbook-mbkm";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6303951B297A8AC800DFB243 /* AddReportUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportUIView.swift; sourceTree = "<group>"; };
+		6303951D297AA76E00DFB243 /* DetailReportingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportingUIView.swift; sourceTree = "<group>"; };
+		6303951F297AB87100DFB243 /* DataKampusMerdekaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataKampusMerdekaUIView.swift; sourceTree = "<group>"; };
+		63039521297AC57C00DFB243 /* EditReportingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReportingUIView.swift; sourceTree = "<group>"; };
+		630E7134298A51460020E938 /* LoginMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMahasiswaUIView.swift; sourceTree = "<group>"; };
+		63414F6F297B7307003F9CD6 /* LoginUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUIView.swift; sourceTree = "<group>"; };
+		63414F71297BD50E003F9CD6 /* ForgotPasswordUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUIView.swift; sourceTree = "<group>"; };
+		63414F73297BE470003F9CD6 /* VerifyCodeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeUIView.swift; sourceTree = "<group>"; };
+		63414F75297BE99C003F9CD6 /* NewPasswordUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordUIView.swift; sourceTree = "<group>"; };
+		635F8288297675AA00E1FA47 /* mobile-logbook-mbkm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-logbook-mbkm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		635F828B297675AA00E1FA47 /* mobile_logbook_mbkmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_logbook_mbkmApp.swift; sourceTree = "<group>"; };
+		635F828D297675AA00E1FA47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		635F828F297675AC00E1FA47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		635F8292297675AC00E1FA47 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		635F8298297675AC00E1FA47 /* mobile-logbook-mbkmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile-logbook-mbkmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		635F829C297675AC00E1FA47 /* mobile_logbook_mbkmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_logbook_mbkmTests.swift; sourceTree = "<group>"; };
+		635F82A2297675AC00E1FA47 /* mobile-logbook-mbkmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mobile-logbook-mbkmUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		635F82A6297675AC00E1FA47 /* mobile_logbook_mbkmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_logbook_mbkmUITests.swift; sourceTree = "<group>"; };
+		635F82A8297675AC00E1FA47 /* mobile_logbook_mbkmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_logbook_mbkmUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		635F82B72976770F00E1FA47 /* HomeDosenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDosenUIView.swift; sourceTree = "<group>"; };
+		635F82BF29767F2E00E1FA47 /* ListMentorshipUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMentorshipUIView.swift; sourceTree = "<group>"; };
+		636D5E082978F71E007C0F09 /* NotificationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUIView.swift; sourceTree = "<group>"; };
+		636D5E0A2978FDFD007C0F09 /* ProfileUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIView.swift; sourceTree = "<group>"; };
+		636D5E0D29792866007C0F09 /* HomeMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMahasiswaUIView.swift; sourceTree = "<group>"; };
+		636D5E0F297968AA007C0F09 /* HomeContentUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentUIView.swift; sourceTree = "<group>"; };
+		636D5E1129798209007C0F09 /* ProfileMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMahasiswaUIView.swift; sourceTree = "<group>"; };
+		63B832412983C5A700D10B62 /* SelectLoginUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLoginUIView.swift; sourceTree = "<group>"; };
+		63C161222984D6AD00DDED40 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		63C161252984D73200DDED40 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		635F8285297675AA00E1FA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		635F8295297675AC00E1FA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		635F829F297675AC00E1FA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		635F827F297675AA00E1FA47 = {
+			isa = PBXGroup;
+			children = (
+				635F828A297675AA00E1FA47 /* mobile-logbook-mbkm */,
+				635F829B297675AC00E1FA47 /* mobile-logbook-mbkmTests */,
+				635F82A5297675AC00E1FA47 /* mobile-logbook-mbkmUITests */,
+				635F8289297675AA00E1FA47 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		635F8289297675AA00E1FA47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				635F8288297675AA00E1FA47 /* mobile-logbook-mbkm.app */,
+				635F8298297675AC00E1FA47 /* mobile-logbook-mbkmTests.xctest */,
+				635F82A2297675AC00E1FA47 /* mobile-logbook-mbkmUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		635F828A297675AA00E1FA47 /* mobile-logbook-mbkm */ = {
+			isa = PBXGroup;
+			children = (
+				63C161242984D71D00DDED40 /* Network */,
+				635F82BA2976772500E1FA47 /* ViewModel */,
+				635F82B92976772000E1FA47 /* Model */,
+				635F82B5297676FA00E1FA47 /* View */,
+				635F828B297675AA00E1FA47 /* mobile_logbook_mbkmApp.swift */,
+				635F828D297675AA00E1FA47 /* ContentView.swift */,
+				635F828F297675AC00E1FA47 /* Assets.xcassets */,
+				635F8291297675AC00E1FA47 /* Preview Content */,
+			);
+			path = "mobile-logbook-mbkm";
+			sourceTree = "<group>";
+		};
+		635F8291297675AC00E1FA47 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				635F8292297675AC00E1FA47 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		635F829B297675AC00E1FA47 /* mobile-logbook-mbkmTests */ = {
+			isa = PBXGroup;
+			children = (
+				635F829C297675AC00E1FA47 /* mobile_logbook_mbkmTests.swift */,
+			);
+			path = "mobile-logbook-mbkmTests";
+			sourceTree = "<group>";
+		};
+		635F82A5297675AC00E1FA47 /* mobile-logbook-mbkmUITests */ = {
+			isa = PBXGroup;
+			children = (
+				635F82A6297675AC00E1FA47 /* mobile_logbook_mbkmUITests.swift */,
+				635F82A8297675AC00E1FA47 /* mobile_logbook_mbkmUITestsLaunchTests.swift */,
+			);
+			path = "mobile-logbook-mbkmUITests";
+			sourceTree = "<group>";
+		};
+		635F82B5297676FA00E1FA47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				636D5E0C29792779007C0F09 /* Mahasiswa */,
+				635F82B6297676FF00E1FA47 /* Dosen */,
+				63414F71297BD50E003F9CD6 /* ForgotPasswordUIView.swift */,
+				63414F73297BE470003F9CD6 /* VerifyCodeUIView.swift */,
+				63414F75297BE99C003F9CD6 /* NewPasswordUIView.swift */,
+				63B832412983C5A700D10B62 /* SelectLoginUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		635F82B6297676FF00E1FA47 /* Dosen */ = {
+			isa = PBXGroup;
+			children = (
+				63414F6F297B7307003F9CD6 /* LoginUIView.swift */,
+				635F82B72976770F00E1FA47 /* HomeDosenUIView.swift */,
+				635F82BF29767F2E00E1FA47 /* ListMentorshipUIView.swift */,
+				636D5E082978F71E007C0F09 /* NotificationUIView.swift */,
+				636D5E0A2978FDFD007C0F09 /* ProfileUIView.swift */,
+			);
+			path = Dosen;
+			sourceTree = "<group>";
+		};
+		635F82B92976772000E1FA47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		635F82BA2976772500E1FA47 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63C161222984D6AD00DDED40 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		636D5E0C29792779007C0F09 /* Mahasiswa */ = {
+			isa = PBXGroup;
+			children = (
+				630E7134298A51460020E938 /* LoginMahasiswaUIView.swift */,
+				636D5E0D29792866007C0F09 /* HomeMahasiswaUIView.swift */,
+				636D5E0F297968AA007C0F09 /* HomeContentUIView.swift */,
+				636D5E1129798209007C0F09 /* ProfileMahasiswaUIView.swift */,
+				6303951B297A8AC800DFB243 /* AddReportUIView.swift */,
+				6303951D297AA76E00DFB243 /* DetailReportingUIView.swift */,
+				6303951F297AB87100DFB243 /* DataKampusMerdekaUIView.swift */,
+				63039521297AC57C00DFB243 /* EditReportingUIView.swift */,
+			);
+			path = Mahasiswa;
+			sourceTree = "<group>";
+		};
+		63C161242984D71D00DDED40 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				63C161252984D73200DDED40 /* Services.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		635F8287297675AA00E1FA47 /* mobile-logbook-mbkm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 635F82AC297675AC00E1FA47 /* Build configuration list for PBXNativeTarget "mobile-logbook-mbkm" */;
+			buildPhases = (
+				635F8284297675AA00E1FA47 /* Sources */,
+				635F8285297675AA00E1FA47 /* Frameworks */,
+				635F8286297675AA00E1FA47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mobile-logbook-mbkm";
+			productName = "mobile-logbook-mbkm";
+			productReference = 635F8288297675AA00E1FA47 /* mobile-logbook-mbkm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		635F8297297675AC00E1FA47 /* mobile-logbook-mbkmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 635F82AF297675AC00E1FA47 /* Build configuration list for PBXNativeTarget "mobile-logbook-mbkmTests" */;
+			buildPhases = (
+				635F8294297675AC00E1FA47 /* Sources */,
+				635F8295297675AC00E1FA47 /* Frameworks */,
+				635F8296297675AC00E1FA47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				635F829A297675AC00E1FA47 /* PBXTargetDependency */,
+			);
+			name = "mobile-logbook-mbkmTests";
+			productName = "mobile-logbook-mbkmTests";
+			productReference = 635F8298297675AC00E1FA47 /* mobile-logbook-mbkmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		635F82A1297675AC00E1FA47 /* mobile-logbook-mbkmUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 635F82B2297675AC00E1FA47 /* Build configuration list for PBXNativeTarget "mobile-logbook-mbkmUITests" */;
+			buildPhases = (
+				635F829E297675AC00E1FA47 /* Sources */,
+				635F829F297675AC00E1FA47 /* Frameworks */,
+				635F82A0297675AC00E1FA47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				635F82A4297675AC00E1FA47 /* PBXTargetDependency */,
+			);
+			name = "mobile-logbook-mbkmUITests";
+			productName = "mobile-logbook-mbkmUITests";
+			productReference = 635F82A2297675AC00E1FA47 /* mobile-logbook-mbkmUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		635F8280297675AA00E1FA47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					635F8287297675AA00E1FA47 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					635F8297297675AC00E1FA47 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 635F8287297675AA00E1FA47;
+					};
+					635F82A1297675AC00E1FA47 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 635F8287297675AA00E1FA47;
+					};
+				};
+			};
+			buildConfigurationList = 635F8283297675AA00E1FA47 /* Build configuration list for PBXProject "mobile-logbook-mbkm" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 635F827F297675AA00E1FA47;
+			productRefGroup = 635F8289297675AA00E1FA47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				635F8287297675AA00E1FA47 /* mobile-logbook-mbkm */,
+				635F8297297675AC00E1FA47 /* mobile-logbook-mbkmTests */,
+				635F82A1297675AC00E1FA47 /* mobile-logbook-mbkmUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		635F8286297675AA00E1FA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635F8293297675AC00E1FA47 /* Preview Assets.xcassets in Resources */,
+				635F8290297675AC00E1FA47 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		635F8296297675AC00E1FA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		635F82A0297675AC00E1FA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		635F8284297675AA00E1FA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63414F70297B7307003F9CD6 /* LoginUIView.swift in Sources */,
+				6303951E297AA76E00DFB243 /* DetailReportingUIView.swift in Sources */,
+				630E7135298A51460020E938 /* LoginMahasiswaUIView.swift in Sources */,
+				636D5E1229798209007C0F09 /* ProfileMahasiswaUIView.swift in Sources */,
+				636D5E0B2978FDFD007C0F09 /* ProfileUIView.swift in Sources */,
+				635F828E297675AA00E1FA47 /* ContentView.swift in Sources */,
+				63C161262984D73200DDED40 /* Services.swift in Sources */,
+				63039522297AC57C00DFB243 /* EditReportingUIView.swift in Sources */,
+				636D5E092978F71E007C0F09 /* NotificationUIView.swift in Sources */,
+				635F828C297675AA00E1FA47 /* mobile_logbook_mbkmApp.swift in Sources */,
+				635F82B82976770F00E1FA47 /* HomeDosenUIView.swift in Sources */,
+				63414F72297BD50E003F9CD6 /* ForgotPasswordUIView.swift in Sources */,
+				63414F76297BE99C003F9CD6 /* NewPasswordUIView.swift in Sources */,
+				63414F74297BE470003F9CD6 /* VerifyCodeUIView.swift in Sources */,
+				635F82C029767F2E00E1FA47 /* ListMentorshipUIView.swift in Sources */,
+				636D5E0E29792866007C0F09 /* HomeMahasiswaUIView.swift in Sources */,
+				63039520297AB87100DFB243 /* DataKampusMerdekaUIView.swift in Sources */,
+				6303951C297A8AC800DFB243 /* AddReportUIView.swift in Sources */,
+				63B832422983C5A700D10B62 /* SelectLoginUIView.swift in Sources */,
+				63C161232984D6AE00DDED40 /* LoginViewModel.swift in Sources */,
+				636D5E10297968AA007C0F09 /* HomeContentUIView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		635F8294297675AC00E1FA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635F829D297675AC00E1FA47 /* mobile_logbook_mbkmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		635F829E297675AC00E1FA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635F82A7297675AC00E1FA47 /* mobile_logbook_mbkmUITests.swift in Sources */,
+				635F82A9297675AC00E1FA47 /* mobile_logbook_mbkmUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		635F829A297675AC00E1FA47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 635F8287297675AA00E1FA47 /* mobile-logbook-mbkm */;
+			targetProxy = 635F8299297675AC00E1FA47 /* PBXContainerItemProxy */;
+		};
+		635F82A4297675AC00E1FA47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 635F8287297675AA00E1FA47 /* mobile-logbook-mbkm */;
+			targetProxy = 635F82A3297675AC00E1FA47 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		635F82AA297675AC00E1FA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		635F82AB297675AC00E1FA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		635F82AD297675AC00E1FA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"mobile-logbook-mbkm/Preview Content\"";
+				DEVELOPMENT_TEAM = 59N5K85PKD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unpas.mobile-logbook-mbkm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		635F82AE297675AC00E1FA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"mobile-logbook-mbkm/Preview Content\"";
+				DEVELOPMENT_TEAM = 59N5K85PKD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unpas.mobile-logbook-mbkm";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		635F82B0297675AC00E1FA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59N5K85PKD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unpas.mobile-logbook-mbkmTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobile-logbook-mbkm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mobile-logbook-mbkm";
+			};
+			name = Debug;
+		};
+		635F82B1297675AC00E1FA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59N5K85PKD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unpas.mobile-logbook-mbkmTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mobile-logbook-mbkm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/mobile-logbook-mbkm";
+			};
+			name = Release;
+		};
+		635F82B3297675AC00E1FA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59N5K85PKD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unpas.mobile-logbook-mbkmUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "mobile-logbook-mbkm";
+			};
+			name = Debug;
+		};
+		635F82B4297675AC00E1FA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59N5K85PKD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.unpas.mobile-logbook-mbkmUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "mobile-logbook-mbkm";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		635F8283297675AA00E1FA47 /* Build configuration list for PBXProject "mobile-logbook-mbkm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				635F82AA297675AC00E1FA47 /* Debug */,
+				635F82AB297675AC00E1FA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		635F82AC297675AC00E1FA47 /* Build configuration list for PBXNativeTarget "mobile-logbook-mbkm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				635F82AD297675AC00E1FA47 /* Debug */,
+				635F82AE297675AC00E1FA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		635F82AF297675AC00E1FA47 /* Build configuration list for PBXNativeTarget "mobile-logbook-mbkmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				635F82B0297675AC00E1FA47 /* Debug */,
+				635F82B1297675AC00E1FA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		635F82B2297675AC00E1FA47 /* Build configuration list for PBXNativeTarget "mobile-logbook-mbkmUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				635F82B3297675AC00E1FA47 /* Debug */,
+				635F82B4297675AC00E1FA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 635F8280297675AA00E1FA47 /* Project object */;
+}
