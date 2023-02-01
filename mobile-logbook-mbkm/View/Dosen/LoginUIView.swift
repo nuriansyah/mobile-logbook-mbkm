@@ -30,23 +30,19 @@ struct LoginUIView: View {
                         //                        self.sessionVM.login(email: self.email, password: self.password)
                     }
                 }
-                Button {
-                    loginViewModel.loginDosen()
-                    if loginViewModel.isAuthenticated {
-                        NavigationLink(destination: HomeDosenUIView()) {
-                            
-                        }
-                    }
-                } label: {
+                NavigationLink(destination: HomeMahasiswaUIView().navigationBarBackButtonHidden(), isActive: $loginViewModel.isAuthenticated){EmptyView()}
+                Button(action: {
+                    loginViewModel.loginMahasiswa()
+                }) {
                     Text("Login")
                         .fontWeight(.semibold)
                         .font(.title2.smallCaps())
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 60)
+                        .background(.blue)
+                        .cornerRadius(20)
                 }
-                .padding(10)
-                .foregroundColor(.white)
-                .padding(.horizontal,60)
-                .background(.blue)
-                .cornerRadius(20)
             }
         .padding()
         }

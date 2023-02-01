@@ -11,42 +11,41 @@ struct LoginMahasiswaUIView: View {
     @StateObject private var loginViewModel = LoginViewModel()
     @State var showPassword = false
     var body: some View {
-        ZStack {
-            Color.mint.ignoresSafeArea()
-            VStack(spacing:10) {
-                
-                    headerView
-                VStack(alignment:.leading) {
-                    nrpForm
-                    passwordForm
-                        
+        NavigationView {
+            ZStack {
+                Color.mint.ignoresSafeArea()
+                VStack(spacing:10) {
                     
-                }
+                        headerView
+                    VStack(alignment:.leading) {
+                        nrpForm
+                        passwordForm
+                            
+                        
+                    }
 
-                HStack{
-                    Spacer()
-                    Button("Forget Password?") {
-                        //                        self.sessionVM.login(email: self.email, password: self.password)
+                    HStack{
+                        Spacer()
+                        Button("Forget Password?") {
+                            //                        self.sessionVM.login(email: self.email, password: self.password)
+                        }
+                    }
+                    NavigationLink(destination: HomeMahasiswaUIView().navigationBarBackButtonHidden(), isActive: $loginViewModel.isAuthenticated){EmptyView()}
+                    Button(action: {
+                        loginViewModel.loginMahasiswa()
+                    }) {
+                        Text("Login")
+                            .fontWeight(.semibold)
+                            .font(.title2.smallCaps())
+                            .padding(10)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 60)
+                            .background(.blue)
+                            .cornerRadius(20)
                     }
                 }
-                
-                Button(action: {
-                    loginViewModel.loginMahasiswa()
-                    NavigationLink(destination: HomeMahasiswaUIView(), isActive: $loginViewModel.isAuthenticated){
-                    }
-                }) {
-                    Text("Login")
-                        .fontWeight(.semibold)
-                        .font(.title2.smallCaps())
-                }
-                .padding(10)
-                .foregroundColor(.white)
-                .padding(.horizontal, 60)
-                .background(.blue)
-                .cornerRadius(20)
-
+            .padding()
             }
-        .padding()
         }
     }
 }
