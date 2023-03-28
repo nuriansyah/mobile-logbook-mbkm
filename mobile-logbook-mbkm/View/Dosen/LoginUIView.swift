@@ -13,7 +13,7 @@ struct LoginUIView: View {
     @State var showPassword = false
     var body: some View {
         ZStack {
-            Color.mint.ignoresSafeArea()
+            
             VStack(spacing:10) {
                 
                     headerView
@@ -30,9 +30,12 @@ struct LoginUIView: View {
                         //                        self.sessionVM.login(email: self.email, password: self.password)
                     }
                 }
-                NavigationLink(destination: HomeMahasiswaUIView().navigationBarBackButtonHidden(), isActive: $loginViewModel.isAuthenticated){EmptyView()}
+                NavigationLink(destination: HomeDosenUIView().navigationBarBackButtonHidden(),
+                               isActive: $loginViewModel.isAuthenticated,
+                               label: { EmptyView() })
+
                 Button(action: {
-                    loginViewModel.loginMahasiswa()
+                    loginViewModel.loginDosen()
                 }) {
                     Text("Login")
                         .fontWeight(.semibold)
@@ -70,10 +73,10 @@ extension LoginUIView{
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(TextInputAutocapitalization.never)
                 .padding()
-                .background(RoundedRectangle(cornerRadius: 20).fill(Color.white.opacity(0.2)))
+                .background(RoundedRectangle(cornerRadius: 20).fill(Color.gray.opacity(0.03)))
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.white,lineWidth: 1)
+                            .stroke(Color.black,lineWidth: 1)
                     )
                     .foregroundColor(.black)
                 
@@ -88,11 +91,11 @@ extension LoginUIView{
                 if showPassword {
                     TextField("Password", text: $loginViewModel.password)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 20).fill(Color.white.opacity(0.2)))
+                        .background(RoundedRectangle(cornerRadius: 20).fill(Color.gray.opacity(0.03)))
                         .overlay {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.white,lineWidth: 1)
+                                    .stroke(Color.black,lineWidth: 1)
                                     .overlay {
                                         HStack{
                                             Spacer()
@@ -106,11 +109,11 @@ extension LoginUIView{
                 } else {
                     SecureField("Password", text: $loginViewModel.password)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 20).fill(Color.white.opacity(0.2)))
+                        .background(RoundedRectangle(cornerRadius: 20).fill(Color.gray.opacity(0.03)))
                         .overlay {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.white,lineWidth: 1)
+                                    .stroke(Color.black,lineWidth: 1)
                                     .overlay {
                                         HStack{
                                             Spacer()

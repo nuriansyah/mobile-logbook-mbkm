@@ -12,13 +12,17 @@ struct HomeMahasiswaUIView: View {
     
     var body: some View {
         TabView(selection: $selectedTab){
-            HomeContentUIView()
+            HomeContentUIView(notificationCount: 24)
                 .tabItem{
                     Image(systemName: "house.fill")
                 }
-            AddReportUIView()
+            ListReportingMahasiswaUIView()
                 .tabItem {
-                    Image(systemName: "plus.circle.fill")
+                    Image(systemName: "doc.plaintext")
+                }
+            MahasiswaNotificationUIView()
+                .tabItem {
+                    Image(systemName: "bell")
                 }
             
             ProfileMahasiswaUIView()

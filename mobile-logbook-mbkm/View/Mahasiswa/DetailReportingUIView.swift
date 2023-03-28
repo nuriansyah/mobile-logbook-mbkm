@@ -9,88 +9,66 @@ import SwiftUI
 import UserNotificationsUI
 
 struct DetailReportingUIView: View {
-   
-    var body: some View {
-        NavigationView {
-            VStack{
-                List {
-                    Section {
-                        VStack(alignment: .leading,spacing: 10) {
-                            HStack {
-                                Text("Judul")
-                                Spacer()
-                                Text("14/02/2023")
-                            }
-                            Text("Content Report")
-                                .font(.body.smallCaps())
-                        }
-                    } header: {
-                        HStack{
-                            Image(systemName: "doc.plaintext")
-                            Text("Approved (2)")
-                        }.foregroundColor(.green)
-                    }
-                    Section {
-                        VStack(alignment: .leading,spacing: 10) {
-                            HStack {
-                                Text("Judul")
-                                Spacer()
-                                Text("14/02/2023")
-                            }
-                            Text("Content Report")
-                                .font(.body.smallCaps())
-                        }
-                    }header: {
-                        HStack{
-                            Image(systemName: "doc.plaintext")
-                            Text("Pending (5)")
-                        }.foregroundColor(.orange)
-                    }
-                    Section {
-                        VStack(alignment: .leading,spacing: 10) {
-                            HStack {
-                                Text("Judul")
-                                Spacer()
-                                Text("14/02/2023")
-                            }
-                            Text("Content Report")
-                                .font(.body.smallCaps())
-                            HStack {
-                                Spacer()
-                                Button {
-                                    
-                                } label: {
-                                    Text("Edit!")
-                                        .fontWeight(.semibold)
-                                        .font(.callout)
-                                    
-                                }
-                                .frame(width: 80)
-                                .padding(10)
-                                .foregroundColor(.white)
-                                .background(.blue.opacity(0.8))
-                                .cornerRadius(14)
-                            .padding([.trailing])
-                                Spacer()
-                            }
-                            
+        @State var text: String = ""
+        let report: Report
+        var body: some View {
+            VStack(alignment:.leading){
+                Text("Title   : \(report.title)")
+                Text("Content : \(report.content)")
+                Text("Commnets")
+                    .padding(.top)
+                    .font(.title)
+                    .fontWeight(.black)
+                Spacer()
+                ScrollView {
+                    VStack(alignment: .leading,spacing: 1){
+                        Section{
+                            Text("Author")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .padding(.bottom,5)
+                            Text("Kekurangan")
+                            Divider()
+                                .padding(.vertical)
+                            Text("Replied")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .padding(.bottom,5)
+                            Text("Kekurangan")
+                            Divider()
+                                .padding(.vertical)
                             
                         }
-                    }header: {
-                        HStack{
-                            Image(systemName: "doc.plaintext")
-                            Text("Reject (12)")
-                        }.foregroundColor(.red)
                     }
                 }
+                TextField("Comments...", text: $text)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 20).fill(Color.gray.opacity(0.03)))
+                    .overlay {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.black,lineWidth: 1)
+                                .overlay {
+                                    HStack{
+                                        Spacer()
+                                        Button{
+                                            
+                                        } label: {
+                                            Image(systemName: "paperplane")
+                                                .font(.title2)
+                                        }.padding(.trailing)
+                                    }
+                                }
+                        }
+                    }
             }
+            .padding()
         }
-
-    }
 }
 
 struct DetailReportingUIView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailReportingUIView()
+        let sampleReport = Report(id: 1, title: "Sample Report", content: "This is a sample report", type: "Type A", status: "Approved", dosen_id: 1, status_id: 1, created_at: "2022-01-01", message: "This is a sample message")
+        return DetailReportingUIView(report: sampleReport)
     }
 }

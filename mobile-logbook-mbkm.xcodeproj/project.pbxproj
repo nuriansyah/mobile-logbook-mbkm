@@ -11,7 +11,10 @@
 		6303951E297AA76E00DFB243 /* DetailReportingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6303951D297AA76E00DFB243 /* DetailReportingUIView.swift */; };
 		63039520297AB87100DFB243 /* DataKampusMerdekaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6303951F297AB87100DFB243 /* DataKampusMerdekaUIView.swift */; };
 		63039522297AC57C00DFB243 /* EditReportingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63039521297AC57C00DFB243 /* EditReportingUIView.swift */; };
+		630E12D8298D0588006E6DF3 /* ReportsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E12D7298D0588006E6DF3 /* ReportsViewModel.swift */; };
+		630E12DA298D05A5006E6DF3 /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E12D9298D05A5006E6DF3 /* ReportModel.swift */; };
 		630E7135298A51460020E938 /* LoginMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630E7134298A51460020E938 /* LoginMahasiswaUIView.swift */; };
+		6323616E299B1E3600F0D86E /* ChangePasswordUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6323616D299B1E3600F0D86E /* ChangePasswordUIView.swift */; };
 		63414F70297B7307003F9CD6 /* LoginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63414F6F297B7307003F9CD6 /* LoginUIView.swift */; };
 		63414F72297BD50E003F9CD6 /* ForgotPasswordUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63414F71297BD50E003F9CD6 /* ForgotPasswordUIView.swift */; };
 		63414F74297BE470003F9CD6 /* VerifyCodeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63414F73297BE470003F9CD6 /* VerifyCodeUIView.swift */; };
@@ -25,14 +28,29 @@
 		635F82A9297675AC00E1FA47 /* mobile_logbook_mbkmUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F82A8297675AC00E1FA47 /* mobile_logbook_mbkmUITestsLaunchTests.swift */; };
 		635F82B82976770F00E1FA47 /* HomeDosenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F82B72976770F00E1FA47 /* HomeDosenUIView.swift */; };
 		635F82C029767F2E00E1FA47 /* ListMentorshipUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F82BF29767F2E00E1FA47 /* ListMentorshipUIView.swift */; };
+		6367F20629B2F6F9001EC0A6 /* ListReportingMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367F20529B2F6F9001EC0A6 /* ListReportingMahasiswaUIView.swift */; };
 		636D5E092978F71E007C0F09 /* NotificationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E082978F71E007C0F09 /* NotificationUIView.swift */; };
 		636D5E0B2978FDFD007C0F09 /* ProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E0A2978FDFD007C0F09 /* ProfileUIView.swift */; };
 		636D5E0E29792866007C0F09 /* HomeMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E0D29792866007C0F09 /* HomeMahasiswaUIView.swift */; };
 		636D5E10297968AA007C0F09 /* HomeContentUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E0F297968AA007C0F09 /* HomeContentUIView.swift */; };
 		636D5E1229798209007C0F09 /* ProfileMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5E1129798209007C0F09 /* ProfileMahasiswaUIView.swift */; };
+		637C05FC29CEB256008B2ADC /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637C05FB29CEB256008B2ADC /* CommentsViewModel.swift */; };
+		637C05FE29CEC245008B2ADC /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637C05FD29CEC245008B2ADC /* CommentModel.swift */; };
+		637C060229CEE43F008B2ADC /* ChangePasswordDosenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637C060129CEE43F008B2ADC /* ChangePasswordDosenUIView.swift */; };
+		637C060429CEE492008B2ADC /* ChangePasswordMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637C060329CEE492008B2ADC /* ChangePasswordMahasiswaUIView.swift */; };
+		637F575229D14F42001596FD /* TestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F575129D14F42001596FD /* TestUIView.swift */; };
+		638122E4298B6AB9007B03C4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638122E3298B6AB9007B03C4 /* UserModel.swift */; };
+		638122E6298B6ACD007B03C4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638122E5298B6ACD007B03C4 /* UserViewModel.swift */; };
+		639AEFE42999F793001DA114 /* BimbinganViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AEFE32999F793001DA114 /* BimbinganViewModel.swift */; };
+		63B038522993D79900CBCA74 /* BimbinganModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B038512993D79900CBCA74 /* BimbinganModel.swift */; };
 		63B832422983C5A700D10B62 /* SelectLoginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B832412983C5A700D10B62 /* SelectLoginUIView.swift */; };
 		63C161232984D6AE00DDED40 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C161222984D6AD00DDED40 /* LoginViewModel.swift */; };
 		63C161262984D73200DDED40 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C161252984D73200DDED40 /* Services.swift */; };
+		63CBFAC329A510A9003425DD /* MahasiswaNotificationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CBFAC229A510A9003425DD /* MahasiswaNotificationUIView.swift */; };
+		63DF35442994F6CC008902DD /* DetailReportUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF35432994F6CC008902DD /* DetailReportUIView.swift */; };
+		63FBDEBA2993830800F7CD45 /* SelectDosenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBDEB92993830700F7CD45 /* SelectDosenUIView.swift */; };
+		63FBDEBC29938D1F00F7CD45 /* UploadLaporanUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBDEBB29938D1F00F7CD45 /* UploadLaporanUIView.swift */; };
+		63FBDEC02993B52E00F7CD45 /* DetailMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FBDEBF2993B52E00F7CD45 /* DetailMahasiswaUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +75,10 @@
 		6303951D297AA76E00DFB243 /* DetailReportingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportingUIView.swift; sourceTree = "<group>"; };
 		6303951F297AB87100DFB243 /* DataKampusMerdekaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataKampusMerdekaUIView.swift; sourceTree = "<group>"; };
 		63039521297AC57C00DFB243 /* EditReportingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReportingUIView.swift; sourceTree = "<group>"; };
+		630E12D7298D0588006E6DF3 /* ReportsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsViewModel.swift; sourceTree = "<group>"; };
+		630E12D9298D05A5006E6DF3 /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		630E7134298A51460020E938 /* LoginMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMahasiswaUIView.swift; sourceTree = "<group>"; };
+		6323616D299B1E3600F0D86E /* ChangePasswordUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordUIView.swift; sourceTree = "<group>"; };
 		63414F6F297B7307003F9CD6 /* LoginUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUIView.swift; sourceTree = "<group>"; };
 		63414F71297BD50E003F9CD6 /* ForgotPasswordUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUIView.swift; sourceTree = "<group>"; };
 		63414F73297BE470003F9CD6 /* VerifyCodeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeUIView.swift; sourceTree = "<group>"; };
@@ -74,14 +95,29 @@
 		635F82A8297675AC00E1FA47 /* mobile_logbook_mbkmUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_logbook_mbkmUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		635F82B72976770F00E1FA47 /* HomeDosenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDosenUIView.swift; sourceTree = "<group>"; };
 		635F82BF29767F2E00E1FA47 /* ListMentorshipUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMentorshipUIView.swift; sourceTree = "<group>"; };
+		6367F20529B2F6F9001EC0A6 /* ListReportingMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListReportingMahasiswaUIView.swift; sourceTree = "<group>"; };
 		636D5E082978F71E007C0F09 /* NotificationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUIView.swift; sourceTree = "<group>"; };
 		636D5E0A2978FDFD007C0F09 /* ProfileUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIView.swift; sourceTree = "<group>"; };
 		636D5E0D29792866007C0F09 /* HomeMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMahasiswaUIView.swift; sourceTree = "<group>"; };
 		636D5E0F297968AA007C0F09 /* HomeContentUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentUIView.swift; sourceTree = "<group>"; };
 		636D5E1129798209007C0F09 /* ProfileMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMahasiswaUIView.swift; sourceTree = "<group>"; };
+		637C05FB29CEB256008B2ADC /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		637C05FD29CEC245008B2ADC /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		637C060129CEE43F008B2ADC /* ChangePasswordDosenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordDosenUIView.swift; sourceTree = "<group>"; };
+		637C060329CEE492008B2ADC /* ChangePasswordMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordMahasiswaUIView.swift; sourceTree = "<group>"; };
+		637F575129D14F42001596FD /* TestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIView.swift; sourceTree = "<group>"; };
+		638122E3298B6AB9007B03C4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		638122E5298B6ACD007B03C4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		639AEFE32999F793001DA114 /* BimbinganViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BimbinganViewModel.swift; sourceTree = "<group>"; };
+		63B038512993D79900CBCA74 /* BimbinganModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BimbinganModel.swift; sourceTree = "<group>"; };
 		63B832412983C5A700D10B62 /* SelectLoginUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLoginUIView.swift; sourceTree = "<group>"; };
 		63C161222984D6AD00DDED40 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		63C161252984D73200DDED40 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		63CBFAC229A510A9003425DD /* MahasiswaNotificationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MahasiswaNotificationUIView.swift; sourceTree = "<group>"; };
+		63DF35432994F6CC008902DD /* DetailReportUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportUIView.swift; sourceTree = "<group>"; };
+		63FBDEB92993830700F7CD45 /* SelectDosenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDosenUIView.swift; sourceTree = "<group>"; };
+		63FBDEBB29938D1F00F7CD45 /* UploadLaporanUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadLaporanUIView.swift; sourceTree = "<group>"; };
+		63FBDEBF2993B52E00F7CD45 /* DetailMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMahasiswaUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +214,8 @@
 				63414F73297BE470003F9CD6 /* VerifyCodeUIView.swift */,
 				63414F75297BE99C003F9CD6 /* NewPasswordUIView.swift */,
 				63B832412983C5A700D10B62 /* SelectLoginUIView.swift */,
+				63FBDEBF2993B52E00F7CD45 /* DetailMahasiswaUIView.swift */,
+				6323616D299B1E3600F0D86E /* ChangePasswordUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +228,9 @@
 				635F82BF29767F2E00E1FA47 /* ListMentorshipUIView.swift */,
 				636D5E082978F71E007C0F09 /* NotificationUIView.swift */,
 				636D5E0A2978FDFD007C0F09 /* ProfileUIView.swift */,
+				63DF35432994F6CC008902DD /* DetailReportUIView.swift */,
+				637C060129CEE43F008B2ADC /* ChangePasswordDosenUIView.swift */,
+				637F575129D14F42001596FD /* TestUIView.swift */,
 			);
 			path = Dosen;
 			sourceTree = "<group>";
@@ -197,6 +238,10 @@
 		635F82B92976772000E1FA47 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				638122E3298B6AB9007B03C4 /* UserModel.swift */,
+				630E12D9298D05A5006E6DF3 /* ReportModel.swift */,
+				63B038512993D79900CBCA74 /* BimbinganModel.swift */,
+				637C05FD29CEC245008B2ADC /* CommentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +250,10 @@
 			isa = PBXGroup;
 			children = (
 				63C161222984D6AD00DDED40 /* LoginViewModel.swift */,
+				638122E5298B6ACD007B03C4 /* UserViewModel.swift */,
+				630E12D7298D0588006E6DF3 /* ReportsViewModel.swift */,
+				639AEFE32999F793001DA114 /* BimbinganViewModel.swift */,
+				637C05FB29CEB256008B2ADC /* CommentsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -220,6 +269,11 @@
 				6303951D297AA76E00DFB243 /* DetailReportingUIView.swift */,
 				6303951F297AB87100DFB243 /* DataKampusMerdekaUIView.swift */,
 				63039521297AC57C00DFB243 /* EditReportingUIView.swift */,
+				63FBDEB92993830700F7CD45 /* SelectDosenUIView.swift */,
+				63FBDEBB29938D1F00F7CD45 /* UploadLaporanUIView.swift */,
+				63CBFAC229A510A9003425DD /* MahasiswaNotificationUIView.swift */,
+				6367F20529B2F6F9001EC0A6 /* ListReportingMahasiswaUIView.swift */,
+				637C060329CEE492008B2ADC /* ChangePasswordMahasiswaUIView.swift */,
 			);
 			path = Mahasiswa;
 			sourceTree = "<group>";
@@ -362,26 +416,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637C060429CEE492008B2ADC /* ChangePasswordMahasiswaUIView.swift in Sources */,
 				63414F70297B7307003F9CD6 /* LoginUIView.swift in Sources */,
 				6303951E297AA76E00DFB243 /* DetailReportingUIView.swift in Sources */,
+				639AEFE42999F793001DA114 /* BimbinganViewModel.swift in Sources */,
+				630E12DA298D05A5006E6DF3 /* ReportModel.swift in Sources */,
 				630E7135298A51460020E938 /* LoginMahasiswaUIView.swift in Sources */,
+				637C05FC29CEB256008B2ADC /* CommentsViewModel.swift in Sources */,
+				63CBFAC329A510A9003425DD /* MahasiswaNotificationUIView.swift in Sources */,
+				63FBDEBA2993830800F7CD45 /* SelectDosenUIView.swift in Sources */,
+				637C060229CEE43F008B2ADC /* ChangePasswordDosenUIView.swift in Sources */,
 				636D5E1229798209007C0F09 /* ProfileMahasiswaUIView.swift in Sources */,
+				63FBDEBC29938D1F00F7CD45 /* UploadLaporanUIView.swift in Sources */,
+				63B038522993D79900CBCA74 /* BimbinganModel.swift in Sources */,
 				636D5E0B2978FDFD007C0F09 /* ProfileUIView.swift in Sources */,
 				635F828E297675AA00E1FA47 /* ContentView.swift in Sources */,
 				63C161262984D73200DDED40 /* Services.swift in Sources */,
+				638122E4298B6AB9007B03C4 /* UserModel.swift in Sources */,
 				63039522297AC57C00DFB243 /* EditReportingUIView.swift in Sources */,
 				636D5E092978F71E007C0F09 /* NotificationUIView.swift in Sources */,
+				638122E6298B6ACD007B03C4 /* UserViewModel.swift in Sources */,
 				635F828C297675AA00E1FA47 /* mobile_logbook_mbkmApp.swift in Sources */,
+				630E12D8298D0588006E6DF3 /* ReportsViewModel.swift in Sources */,
+				6323616E299B1E3600F0D86E /* ChangePasswordUIView.swift in Sources */,
 				635F82B82976770F00E1FA47 /* HomeDosenUIView.swift in Sources */,
 				63414F72297BD50E003F9CD6 /* ForgotPasswordUIView.swift in Sources */,
 				63414F76297BE99C003F9CD6 /* NewPasswordUIView.swift in Sources */,
 				63414F74297BE470003F9CD6 /* VerifyCodeUIView.swift in Sources */,
+				637C05FE29CEC245008B2ADC /* CommentModel.swift in Sources */,
 				635F82C029767F2E00E1FA47 /* ListMentorshipUIView.swift in Sources */,
 				636D5E0E29792866007C0F09 /* HomeMahasiswaUIView.swift in Sources */,
 				63039520297AB87100DFB243 /* DataKampusMerdekaUIView.swift in Sources */,
 				6303951C297A8AC800DFB243 /* AddReportUIView.swift in Sources */,
+				63DF35442994F6CC008902DD /* DetailReportUIView.swift in Sources */,
+				637F575229D14F42001596FD /* TestUIView.swift in Sources */,
 				63B832422983C5A700D10B62 /* SelectLoginUIView.swift in Sources */,
+				63FBDEC02993B52E00F7CD45 /* DetailMahasiswaUIView.swift in Sources */,
 				63C161232984D6AE00DDED40 /* LoginViewModel.swift in Sources */,
+				6367F20629B2F6F9001EC0A6 /* ListReportingMahasiswaUIView.swift in Sources */,
 				636D5E10297968AA007C0F09 /* HomeContentUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

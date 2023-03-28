@@ -21,7 +21,7 @@ class LoginViewModel: ObservableObject {
         Webservice().loginDosen(email: email, password: password) { result in
             switch result {
                 case .success(let token):
-                    defaults.setValue(token, forKey: "jsonwebtoken")
+                    defaults.setValue(token, forKey: "token")
                     DispatchQueue.main.async {
                         self.isAuthenticated = true
                     }
@@ -37,7 +37,7 @@ class LoginViewModel: ObservableObject {
         Webservice().loginMahasiswa(nrp: nrp, password: password) { result in
             switch result {
                 case .success(let token):
-                    defaults.setValue(token, forKey: "jsonwebtoken")
+                    defaults.setValue(token, forKey: "token")
                     DispatchQueue.main.async {
                         self.isAuthenticated = true
                     }
@@ -50,7 +50,7 @@ class LoginViewModel: ObservableObject {
     func signout() {
            
            let defaults = UserDefaults.standard
-           defaults.removeObject(forKey: "jsonwebtoken")
+           defaults.removeObject(forKey: "token")
            DispatchQueue.main.async {
                self.isAuthenticated = false
            }

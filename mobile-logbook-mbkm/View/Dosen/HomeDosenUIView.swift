@@ -15,6 +15,9 @@ struct HomeDosenUIView: View {
                 .tabItem{
                     Image(systemName: "house.fill")
                 }
+                .tabItem {
+                    Image(systemName: "list.bullet.rectangle.portrait.fill")
+                }
                 NotificationUIView()
                 .tabItem {
                     Image(systemName: "bell.fill")
@@ -39,3 +42,4 @@ enum Tabs {
     case notification
     case profile
 }
+ 
