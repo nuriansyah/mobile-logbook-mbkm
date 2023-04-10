@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ProfileMahasiswaUIView: View {
     @State var notificationsEnabled: Bool = false
-    @State var isShowingSelectionDosenSheet = false
     @ObservedObject var userViewModel = UserViewModel()
-    @StateObject private var loginVM = LoginViewModel()
+    @EnvironmentObject var settings: LoginViewModel
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 0){
@@ -24,13 +24,19 @@ struct ProfileMahasiswaUIView: View {
                                 ChangePasswordMahasiswaUIView()
                             }
                             NavigationLink("Data Kampus Merdeka") {
-                                DataKampusMerdekaUIView(viewModel: MahasiswaDetailViewModel(mahasiswa: Mahasiswa(id: 0, company: "", programKM: "", learnPath: "", batch: 0)))
+                                DataKampusMerdekaUIView()
                             }
                             NavigationLink("Upload File Konversi Nilai") {
-                                UploadLaporanUIView()
+                                UploadKonversiNilaiUIView()
                             }
                             Toggle(isOn: $notificationsEnabled) {
-                                Text("Enabled Notifications")
+                                Text("Toggle Notifications")
+                            }.onChange(of: notificationsEnabled) { enabled in
+                                if enabled {
+                                    requestNotificationPermission()
+                                } else {
+                                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+                                }
                             }
                         } header: {
                             Text("Profile")
@@ -46,24 +52,41 @@ struct ProfileMahasiswaUIView: View {
                     logoutBtn
                 }
             }
-            .onChange(of: loginVM.isAuthenticated) { isAuthenticated in
-                if !isAuthenticated {
-                    loginVM.nrp = ""
-                    loginVM.password = ""
-                }
+        }
+    }
+    
+    private func requestNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]) { success, error in
+            if success {
+                notificationsEnabled = true
+                scheduleNotification()
+            } else if let error = error {
+                print(error.localizedDescription)
             }
         }
     }
-}
-
-struct ProfileMahasiswaUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileMahasiswaUIView()
+    
+    private func scheduleNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Reminder: Counseling/Mentoring Report"
+        content.subtitle = "Don't forget to submit your report!"
+        content.sound = UNNotificationSound.default
+        
+        var dateComponents = DateComponents()
+        dateComponents.day = 5
+        
+        //        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if error == nil {
+                print("Notifikasi berhasil ditetapkan")
+            }
+        }
     }
-}
-
-extension ProfileMahasiswaUIView{
-    private var headerViewSome: some View{
+    
+    private var headerViewSome: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack{
                 Image(systemName: "person.circle.fill")
@@ -73,7 +96,7 @@ extension ProfileMahasiswaUIView{
                     if userViewModel.user != nil {
                         Text("\(userViewModel.user!.nama)")
                         Text("\(userViewModel.user!.nrp)")
-                    }else{
+                    } else {
                         Text("Loading")
                     }
                 }
@@ -83,18 +106,16 @@ extension ProfileMahasiswaUIView{
             }.padding(.leading)
         }
     }
-    private var logoutBtn: some View{
+    
+    private var logoutBtn: some View {
         HStack{
             Spacer()
             VStack{
                 Spacer()
-                NavigationLink(destination: LoginMahasiswaUIView(), isActive: $loginVM.isAuthenticated) {
-                    EmptyView()
-                }
-                .hidden()
-
+                    .hidden()
                 Button(action:{
-                    loginVM.signout()
+                    settings.signout()
+                    navigateToLogin()
                 }){
                     Text("Logout")
                         .padding()
@@ -106,4 +127,18 @@ extension ProfileMahasiswaUIView{
             Spacer()
         }
     }
+    
+    private func navigateToLogin() {
+        if let window = UIApplication.shared.windows.first {
+            window.rootViewController = UIHostingController(rootView: SelectLoginUIView().environmentObject(LoginViewModel()))
+            window.makeKeyAndVisible()
+        }
+    }
 }
+
+struct ProfileMahasiswaUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileMahasiswaUIView()
+    }
+}
+

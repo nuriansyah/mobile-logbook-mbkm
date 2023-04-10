@@ -20,11 +20,6 @@ struct HomeMahasiswaUIView: View {
                 .tabItem {
                     Image(systemName: "doc.plaintext")
                 }
-            MahasiswaNotificationUIView()
-                .tabItem {
-                    Image(systemName: "bell")
-                }
-            
             ProfileMahasiswaUIView()
                 .tabItem {
                     Image(systemName: "person.fill")

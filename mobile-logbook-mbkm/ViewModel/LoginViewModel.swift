@@ -48,7 +48,6 @@ class LoginViewModel: ObservableObject {
     }
     
     func signout() {
-           
            let defaults = UserDefaults.standard
            defaults.removeObject(forKey: "token")
            DispatchQueue.main.async {
@@ -56,5 +55,4 @@ class LoginViewModel: ObservableObject {
            }
            
        }
-    
 }

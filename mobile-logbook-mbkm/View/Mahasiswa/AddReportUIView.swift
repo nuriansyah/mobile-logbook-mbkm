@@ -17,50 +17,37 @@ struct AddReportUIView: View {
     @State private var date = Date()
     @State private var selectedImage: UIImage?
     @State private var imagePickerVisible: Bool = false
+    
     var body: some View {
-        
         VStack(alignment: .leading, spacing: 5) {
             DatePicker("Date Now", selection: $date, in: Date().addingTimeInterval(-846000)...Date(), displayedComponents: [.date])
             Text("Title")
             TextField("title..", text: $title)
-                .padding(.vertical,5)
-                .padding(.horizontal,5)
-                .overlay(RoundedRectangle(cornerRadius: 6).stroke(.black,lineWidth: 2))
-            
+                .padding(.vertical, 5)
+                .padding(.horizontal, 5)
+                .overlay(RoundedRectangle(cornerRadius: 6).stroke(.black, lineWidth: 2))
+                .autocorrectionDisabled()
             Text("Fill your Report")
                 .font(.system(.subheadline).bold())
-            TextField("Reportings yours..", text: $content,axis: .vertical)
-            
-                .padding([.horizontal,.vertical])
+            TextField("Reportings yours..", text: $content, axis: .vertical)
+                .padding([.horizontal, .vertical])
                 .lineLimit(8, reservesSpace: true)
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black,lineWidth: 2))
-            HStack{
-                Text("Upload Your Photo")
-                Spacer()
-                Button(action: {
-                    self.imagePickerVisible = true
-                }, label: {
-                    Image(systemName: "square.and.arrow.up")
-                })
-            }
-            .padding([.trailing,.vertical])
-            .sheet(isPresented: $imagePickerVisible) {
-                        ImagePickerView(selectedImage: self.$selectedImage)
-                    }
-                    .alert(isPresented: $showErrorAlert) {
-                        Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK"),action: {
-                            presentationMode.wrappedValue.dismiss()
-                        }))
-                    }
+                .autocorrectionDisabled()
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(.black, lineWidth: 2))
+
             Button(action: {
-                ReportingAPI.shared.insertReport(title: self.title, content: self.content) { (result) in
-                    switch result {
-                    case .success:
-                        self.showSuccessAlert = true
-                    case .failure(let error):
-                        self.showErrorAlert = true
-                        self.errorMessage = error.localizedDescription
-                        print(error)
+                if self.title.isEmpty || self.content.isEmpty {
+                    self.showErrorAlert = true
+                } else {
+                    ReportingAPI.shared.insertReport(title: self.title, content: self.content) { (result) in
+                        switch result {
+                        case .success:
+                            self.showSuccessAlert = true
+                        case .failure(let error):
+                            self.showErrorAlert = true
+                            self.errorMessage = error.localizedDescription
+                            print(error)
+                        }
                     }
                 }
             }, label: {
@@ -72,28 +59,23 @@ struct AddReportUIView: View {
                     .cornerRadius(5)
             })
             .padding(.vertical)
-            
         }
         .padding()
-        .alert(isPresented: $showErrorAlert) {
-            Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK"),action: {
+        .alert(isPresented: $showErrorAlert, content: {
+            Alert(title: Text("Failed"), message: Text("Title Or Content Cannot Empty"), dismissButton: .default(Text("OK")) {
                 presentationMode.wrappedValue.dismiss()
-            }))
-        }
-        if showSuccessAlert{
-            NavigationLink(destination: HomeMahasiswaUIView(), isActive: $showSuccessAlert) {
-                EmptyView()
-            }
-            .alert(isPresented: $showSuccessAlert) {
-                Alert(title: Text("Success"), message: Text("Report submitted successfully"), dismissButton: .default(Text("OK"), action: {
-                    presentationMode.wrappedValue.dismiss()
-                }))
-                
-            }
-        }
+            })
+        })
+        .background(
+            EmptyView()
+                .alert(isPresented: $showSuccessAlert, content: {
+                    Alert(title: Text("Success"), message: Text("Report submitted successfully"), dismissButton: .default(Text("OK"), action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }))
+                })
+        )
     }
 }
-
 
 
 struct AddReportUIView_Previews: PreviewProvider {
@@ -101,6 +83,8 @@ struct AddReportUIView_Previews: PreviewProvider {
         AddReportUIView()
     }
 }
+
+
 
 
 struct ImagePickerView: UIViewControllerRepresentable {
@@ -138,3 +122,21 @@ struct ImagePickerView: UIViewControllerRepresentable {
         }
     }
 }
+//            HStack{
+//                Text("Upload Your Photo")
+//                Spacer()
+//                Button(action: {
+//                    self.imagePickerVisible = true
+//                }, label: {
+//                    Image(systemName: "square.and.arrow.up")
+//                })
+//            }
+//            .padding([.trailing,.vertical])
+//            .sheet(isPresented: $imagePickerVisible) {
+//                ImagePickerView(selectedImage: self.$selectedImage)
+//            }
+//            .alert(isPresented: $showErrorAlert) {
+//                Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK"),action: {
+//                    presentationMode.wrappedValue.dismiss()
+//                }))
+//            }

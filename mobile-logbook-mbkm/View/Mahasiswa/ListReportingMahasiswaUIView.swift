@@ -36,7 +36,7 @@ extension ListReportingMahasiswaUIView{
                     HStack {
                         Text("\(report.title)")
                         Spacer()
-                        Text("\(report.createdAt)")
+                        Text("\(report.created_at)")
                     }
                     Text("\(report.content)")
                         .font(.body.smallCaps())
@@ -66,7 +66,7 @@ extension ListReportingMahasiswaUIView{
                         .font(.body.smallCaps())
                 }
             }
-
+            
         } header: {
             HStack{
                 Image(systemName: "doc.plaintext")
@@ -77,8 +77,8 @@ extension ListReportingMahasiswaUIView{
             viewModel.getPendingReports()
         }
     }
-
-
+    
+    
     private var listReject: some View{
         Section {
             List(viewModel.reportsReject, id: \.id) { report in
@@ -86,7 +86,7 @@ extension ListReportingMahasiswaUIView{
                     HStack {
                         Text("\(report.title)")
                         Spacer()
-                        Text("\(report.createdAt)")
+                        Text("\(report.created_at)")
                     }
                     Text("\(report.content)")
                         .font(.body.smallCaps())

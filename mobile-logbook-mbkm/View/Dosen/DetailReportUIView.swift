@@ -47,10 +47,11 @@ struct DetailReportUIView: View {
                 }
             }
             .onAppear{
-                cViewModel.getAllComments(postID: 1)
+                cViewModel.getAllComments(postID: report.reportID)
             }
             TextField("Comments...", text: $comment)
                 .padding()
+                .disableAutocorrection(true)
                 .background(RoundedRectangle(cornerRadius: 20).fill(Color.gray.opacity(0.03)))
                 .overlay {
                     ZStack {
@@ -61,6 +62,7 @@ struct DetailReportUIView: View {
                                     Spacer()
                                     Button{
                                         viewModel.createCommentDosen(postID: report.reportID, comment: comment)
+                                        self.showingAlert.toggle()
                                     } label: {
                                         Image(systemName: "paperplane")
                                             .font(.title2)
@@ -74,8 +76,7 @@ struct DetailReportUIView: View {
                     .foregroundColor(.red)
             }
             if viewModel.isSuccessful{
-                Text("Comment added Successfully")
-                    .foregroundColor(.green)
+                
             }
         }
         .padding()
@@ -105,6 +106,9 @@ struct DetailReportUIView: View {
         }
         .alert(isPresented: $bViewModel.didRejectedBimbingan) {
             Alert(title: Text("Rejected Reporting"))
+        }
+        .alert(isPresented: $viewModel.isSuccessful) {
+            Alert(title: Text("Success Added Comment"))
         }
     }
 }

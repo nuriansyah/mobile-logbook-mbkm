@@ -8,9 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-       var body: some View {
-        Text("hello world!")
-       }
+    @StateObject private var loginViewModel = LoginViewModel()
+    var body: some View {
+        VStack(spacing: 20) {
+            if loginViewModel.isAuthenticated {
+                Text("Welcome Home!")
+                Button(action: {
+                    loginViewModel.signout()
+                }) {
+                    Text("Logout")
+                }
+            } else {
+                TextField("NRP", text: $loginViewModel.nrp)
+                SecureField("Password", text: $loginViewModel.password)
+                Button(action: {
+                    loginViewModel.loginMahasiswa()
+                }) {
+                    Text("Login")
+                }
+            }
+        }
+    }
 }
 
 

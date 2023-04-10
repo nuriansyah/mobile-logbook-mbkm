@@ -26,7 +26,7 @@ struct UploadLaporanUIView: View {
             }) {
                 Image(systemName: "doc.badge.arrow.up.fill")
                     .font(.title)
-                Text("Upload Laporan Akhir")
+                Text("Upload Konversi Nilai")
             }
             .sheet(isPresented: $showDocumentPicker) {
                 DocumentPickerView(isPresented: self.$showDocumentPicker, uploadViewModel: self.uploadViewModel)

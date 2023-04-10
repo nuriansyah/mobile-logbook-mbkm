@@ -20,8 +20,6 @@ struct LoginUIView: View {
                 VStack(alignment:.leading) {
                     emailForm
                     passwordForm
-                        
-                    
                 }
 
                 HStack{

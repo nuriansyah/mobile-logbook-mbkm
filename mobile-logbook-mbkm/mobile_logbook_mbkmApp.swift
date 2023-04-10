@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct mobile_logbook_mbkmApp: App {
+    let loginViewModel = LoginViewModel()
+
     var body: some Scene {
         WindowGroup {
             SelectLoginUIView()
+                .environmentObject(loginViewModel)
         }
     }
 }

@@ -18,10 +18,6 @@ struct HomeDosenUIView: View {
                 .tabItem {
                     Image(systemName: "list.bullet.rectangle.portrait.fill")
                 }
-                NotificationUIView()
-                .tabItem {
-                    Image(systemName: "bell.fill")
-                }
                 ProfileUIView()
                 .tabItem {
                     Image(systemName: "person.fill")

@@ -6,64 +6,97 @@
 //
 
 import SwiftUI
-import UserNotificationsUI
+
 
 struct DetailReportingUIView: View {
-        @State var text: String = ""
-        let report: Report
-        var body: some View {
-            VStack(alignment:.leading){
-                Text("Title   : \(report.title)")
-                Text("Content : \(report.content)")
-                Text("Commnets")
-                    .padding(.top)
-                    .font(.title)
-                    .fontWeight(.black)
-                Spacer()
-                ScrollView {
-                    VStack(alignment: .leading,spacing: 1){
-                        Section{
-                            Text("Author")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .padding(.bottom,5)
-                            Text("Kekurangan")
-                            Divider()
-                                .padding(.vertical)
-                            Text("Replied")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .padding(.bottom,5)
-                            Text("Kekurangan")
-                            Divider()
-                                .padding(.vertical)
-                            
+    @StateObject var cViewModel = CommentViewModel()
+    @StateObject var viewModel = CreateCommentViewModel()
+    
+    @State private var showSuccessAlert = false
+    
+    @State var isEditing = false
+    @State var comment: String = ""
+    @State var report: Report
+    
+    var body: some View {
+        VStack(alignment:.leading){
+            Text("Title   : \(report.title)")
+            Text("Content : \(report.content)")
+            Text("Commnets")
+                .padding(.top)
+                .font(.title)
+                .fontWeight(.black)
+            Spacer()
+            ScrollView{
+                ForEach(cViewModel.comments, id:\.id){ c in
+                    VStack (alignment:.leading,spacing: 2){
+                        HStack {
+                            if let mhs = c.mhsName{
+                                Text(mhs)
+                            } else if let dosen = c.dosenName{
+                                Text(dosen)
+                            }else{
+                                Text("Unknows")
+                            }
+                                
+                            Spacer()
+                            Text(c.createdAt)
+                                .font(.subheadline)
+                        }
+                        Text(c.comments)
+                    }
+                    Divider()
+                }
+            }
+            .onAppear{
+                cViewModel.getAllComments(postID: report.id!)
+            }
+            TextField("Comments...", text: $comment)
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 20).fill(Color.gray.opacity(0.03)))
+                .overlay {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.black,lineWidth: 1)
+                            .overlay {
+                                HStack{
+                                    Spacer()
+                                    Button{
+                                        viewModel.createCommentMahasiswa(postID: report.id!, comment: comment)
+                                        self.showSuccessAlert.toggle()
+                                    } label: {
+                                        Image(systemName: "paperplane")
+                                            .font(.title2)
+                                    }.padding(.trailing)
+                                }
+                            }
+                    }
+                }
+            if viewModel.errrorMessage != ""{
+                Text(viewModel.errrorMessage)
+                    .foregroundColor(.red)
+            }
+        }
+        .padding()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if report.status != "Accepted" {
+                        Button(action: {
+                            self.isEditing = true
+                        }) {
+                            Image(systemName: "pencil")
+                                .font(.title2)
                         }
                     }
                 }
-                TextField("Comments...", text: $text)
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 20).fill(Color.gray.opacity(0.03)))
-                    .overlay {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(Color.black,lineWidth: 1)
-                                .overlay {
-                                    HStack{
-                                        Spacer()
-                                        Button{
-                                            
-                                        } label: {
-                                            Image(systemName: "paperplane")
-                                                .font(.title2)
-                                        }.padding(.trailing)
-                                    }
-                                }
-                        }
-                    }
             }
-            .padding()
-        }
+            .sheet(isPresented: $isEditing) {
+                EditReportingUIView(report: $report, reportViewModel: ReportViewModel(report: report))
+            }
+            .alert(isPresented: $showSuccessAlert, content: {
+                Alert(title: Text("Success"), message: Text("Comment added successfully."), dismissButton: .default(Text("OK")))
+            })
+    }
 }
 
 struct DetailReportingUIView_Previews: PreviewProvider {
@@ -72,3 +105,4 @@ struct DetailReportingUIView_Previews: PreviewProvider {
         return DetailReportingUIView(report: sampleReport)
     }
 }
+

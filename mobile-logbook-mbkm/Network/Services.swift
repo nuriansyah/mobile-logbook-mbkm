@@ -16,6 +16,8 @@ enum NetworkError: Error {
     case invalidURL
     case noData
     case decodingError
+    case invalidResponse
+    case invalidRequestBody
 }
 
 struct LoginRequestBodyMahasiswa: Codable {

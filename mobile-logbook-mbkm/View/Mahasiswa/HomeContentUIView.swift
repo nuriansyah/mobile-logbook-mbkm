@@ -204,7 +204,7 @@ extension HomeContentUIView{
             Button(action: {
                 isShowingUploadFileSheet.toggle()
             }) {
-                Text("Upload Laporan Akhir")
+                Text("Upload Konversi Nilai")
             }
             .padding()
         }
@@ -235,29 +235,3 @@ extension HomeContentUIView{
         }
     }
 }
-
-
-
-
-//struct NotificationIcon: View {
-//    var notificationCount: Int
-//    var body: some View {
-//        ZStack {
-//            Image(systemName: "bell")
-//                .font(.system(size: 28))
-//            if notificationCount > 0 {
-//                ZStack{
-//                    Capsule()
-//                        .fill(Color.red)
-//                        .frame(width: 20,height: 20)
-//                        .offset(x: 12, y: -10)
-//                    Text("\(notificationCount)")
-//                        .foregroundColor(.white)
-//                        .font(.system(size: 14))
-//                        .fontWeight(.bold)
-//                        .offset(x: 12, y: -10)
-//                }
-//            }
-//        }
-//    }
-//}

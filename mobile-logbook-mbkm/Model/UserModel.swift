@@ -68,9 +68,9 @@ struct MahasiswaDetail: Codable {
 
 struct ReportDetail: Codable {
     let reportID: Int
-    let title: String
-    let content: String
-    let status: String
+    var title: String
+    var content: String
+    var status: String
     let createdAt: String
     
     enum CodingKeys: String, CodingKey {

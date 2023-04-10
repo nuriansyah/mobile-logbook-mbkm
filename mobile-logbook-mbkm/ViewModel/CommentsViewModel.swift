@@ -45,7 +45,9 @@ class CreateCommentViewModel: ObservableObject{
                 self.errrorMessage = "Unexpected response"
                 return
             }
-            self.isSuccessful = true
+            DispatchQueue.main.async {
+                self.isSuccessful = true
+            }
         }.resume()
     }
     func createCommentDosen(postID: Int,comment: String){

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63021B9729D5726E0088A0F9 /* UploadKonversiNilaiUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63021B9629D5726E0088A0F9 /* UploadKonversiNilaiUIView.swift */; };
 		6303951C297A8AC800DFB243 /* AddReportUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6303951B297A8AC800DFB243 /* AddReportUIView.swift */; };
 		6303951E297AA76E00DFB243 /* DetailReportingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6303951D297AA76E00DFB243 /* DetailReportingUIView.swift */; };
 		63039520297AB87100DFB243 /* DataKampusMerdekaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6303951F297AB87100DFB243 /* DataKampusMerdekaUIView.swift */; };
@@ -38,7 +39,6 @@
 		637C05FE29CEC245008B2ADC /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637C05FD29CEC245008B2ADC /* CommentModel.swift */; };
 		637C060229CEE43F008B2ADC /* ChangePasswordDosenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637C060129CEE43F008B2ADC /* ChangePasswordDosenUIView.swift */; };
 		637C060429CEE492008B2ADC /* ChangePasswordMahasiswaUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637C060329CEE492008B2ADC /* ChangePasswordMahasiswaUIView.swift */; };
-		637F575229D14F42001596FD /* TestUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637F575129D14F42001596FD /* TestUIView.swift */; };
 		638122E4298B6AB9007B03C4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638122E3298B6AB9007B03C4 /* UserModel.swift */; };
 		638122E6298B6ACD007B03C4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638122E5298B6ACD007B03C4 /* UserViewModel.swift */; };
 		639AEFE42999F793001DA114 /* BimbinganViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639AEFE32999F793001DA114 /* BimbinganViewModel.swift */; };
@@ -71,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63021B9629D5726E0088A0F9 /* UploadKonversiNilaiUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadKonversiNilaiUIView.swift; sourceTree = "<group>"; };
 		6303951B297A8AC800DFB243 /* AddReportUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportUIView.swift; sourceTree = "<group>"; };
 		6303951D297AA76E00DFB243 /* DetailReportingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReportingUIView.swift; sourceTree = "<group>"; };
 		6303951F297AB87100DFB243 /* DataKampusMerdekaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataKampusMerdekaUIView.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		63414F71297BD50E003F9CD6 /* ForgotPasswordUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordUIView.swift; sourceTree = "<group>"; };
 		63414F73297BE470003F9CD6 /* VerifyCodeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeUIView.swift; sourceTree = "<group>"; };
 		63414F75297BE99C003F9CD6 /* NewPasswordUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordUIView.swift; sourceTree = "<group>"; };
+		6348274B29D924F00099BFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		635F8288297675AA00E1FA47 /* mobile-logbook-mbkm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobile-logbook-mbkm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		635F828B297675AA00E1FA47 /* mobile_logbook_mbkmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobile_logbook_mbkmApp.swift; sourceTree = "<group>"; };
 		635F828D297675AA00E1FA47 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,7 +107,6 @@
 		637C05FD29CEC245008B2ADC /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		637C060129CEE43F008B2ADC /* ChangePasswordDosenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordDosenUIView.swift; sourceTree = "<group>"; };
 		637C060329CEE492008B2ADC /* ChangePasswordMahasiswaUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordMahasiswaUIView.swift; sourceTree = "<group>"; };
-		637F575129D14F42001596FD /* TestUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIView.swift; sourceTree = "<group>"; };
 		638122E3298B6AB9007B03C4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		638122E5298B6ACD007B03C4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		639AEFE32999F793001DA114 /* BimbinganViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BimbinganViewModel.swift; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 		635F828A297675AA00E1FA47 /* mobile-logbook-mbkm */ = {
 			isa = PBXGroup;
 			children = (
+				6348274B29D924F00099BFD5 /* Info.plist */,
 				63C161242984D71D00DDED40 /* Network */,
 				635F82BA2976772500E1FA47 /* ViewModel */,
 				635F82B92976772000E1FA47 /* Model */,
@@ -230,7 +232,6 @@
 				636D5E0A2978FDFD007C0F09 /* ProfileUIView.swift */,
 				63DF35432994F6CC008902DD /* DetailReportUIView.swift */,
 				637C060129CEE43F008B2ADC /* ChangePasswordDosenUIView.swift */,
-				637F575129D14F42001596FD /* TestUIView.swift */,
 			);
 			path = Dosen;
 			sourceTree = "<group>";
@@ -274,6 +275,7 @@
 				63CBFAC229A510A9003425DD /* MahasiswaNotificationUIView.swift */,
 				6367F20529B2F6F9001EC0A6 /* ListReportingMahasiswaUIView.swift */,
 				637C060329CEE492008B2ADC /* ChangePasswordMahasiswaUIView.swift */,
+				63021B9629D5726E0088A0F9 /* UploadKonversiNilaiUIView.swift */,
 			);
 			path = Mahasiswa;
 			sourceTree = "<group>";
@@ -446,10 +448,10 @@
 				637C05FE29CEC245008B2ADC /* CommentModel.swift in Sources */,
 				635F82C029767F2E00E1FA47 /* ListMentorshipUIView.swift in Sources */,
 				636D5E0E29792866007C0F09 /* HomeMahasiswaUIView.swift in Sources */,
+				63021B9729D5726E0088A0F9 /* UploadKonversiNilaiUIView.swift in Sources */,
 				63039520297AB87100DFB243 /* DataKampusMerdekaUIView.swift in Sources */,
 				6303951C297A8AC800DFB243 /* AddReportUIView.swift in Sources */,
 				63DF35442994F6CC008902DD /* DetailReportUIView.swift in Sources */,
-				637F575229D14F42001596FD /* TestUIView.swift in Sources */,
 				63B832422983C5A700D10B62 /* SelectLoginUIView.swift in Sources */,
 				63FBDEC02993B52E00F7CD45 /* DetailMahasiswaUIView.swift in Sources */,
 				63C161232984D6AE00DDED40 /* LoginViewModel.swift in Sources */,
@@ -616,11 +618,13 @@
 				DEVELOPMENT_TEAM = 59N5K85PKD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "mobile-logbook-mbkm/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -645,11 +649,13 @@
 				DEVELOPMENT_TEAM = 59N5K85PKD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "mobile-logbook-mbkm/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

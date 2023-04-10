@@ -8,78 +8,74 @@
 import SwiftUI
 
 struct EditReportingUIView: View {
-    @State private var judul: String = ""
-    @State var dateOfBirth: Date = Date()
-    @State private var datePickerId: Int = 0
-    
-    private var dateOfBirthRange: ClosedRange<Date> {
-        let dateFrom = Calendar.current.date(byAdding: .year, value: 0, to: Date())!
-        let dateTo: Date = Date()
-        return dateFrom...dateTo
-    }
+    @Binding var report: Report
+    @ObservedObject var reportViewModel: ReportViewModel
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showAlertSuccess = false
+    @State private var showAlertError = false
     
     var body: some View {
-        VStack(alignment:.leading) {
+        NavigationView {
             Form {
-                Section{
-                    DatePicker(
-                        "",
-                        selection: $dateOfBirth,
-                        in: dateOfBirthRange,
-                        displayedComponents: .date
-                    )
-                    .datePickerStyle(CompactDatePickerStyle())
-                    .labelsHidden()
-                    .id(datePickerId)
-                    
-                    VStack(alignment: .leading,spacing: 10){
-                        Text("Title")
-                        TextField("Title..", text: $judul)
-                            .padding(5)
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(lineWidth: 2)
-                            }
-                    }
-                    Text("Fill your Report")
-                        .font(.system(.subheadline).bold())
-                    TextField("Reportings yours..", text: $judul,axis: .vertical)
-                        .padding([.horizontal,.vertical])
+                Section(header: Text("Title")) {
+                    TextField("Title", text: $report.title)
+                        .autocorrectionDisabled()
+                }
+                Section(header: Text("Content")) {
+                    TextField("Content", text: $report.content,axis: .vertical)
                         .lineLimit(8, reservesSpace: true)
-                        .overlay(content: {
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(.black,lineWidth: 2)
-                        })
-                }.listRowSeparator(.hidden)
-                Section {
-                    
-                } footer: {
-                    HStack {
-                        Spacer()
-                        Button {
-                            
-                        } label: {
-                            Text("Edit!")
-                                .fontWeight(.semibold)
-                                .font(.callout)
-                            
-                        }
-                        .frame(width: 80)
-                        .padding(10)
-                        .foregroundColor(.white)
-                        .background(.blue.opacity(0.8))
-                        .cornerRadius(14)
-                        .padding([.trailing])
-                        Spacer()
-                    }
+                        .frame(width: 200,height: 200)
+                        .autocorrectionDisabled()
                 }
             }
+            .navigationBarTitle("Edit Report")
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Cancel")
+                    },
+                trailing:
+                    Button(action: {
+                        if report.title.isEmpty || report.content.isEmpty{
+                            self.showAlertError.toggle()
+                        } else {
+                            reportViewModel.editReport(title: report.title, content: report.content) { result in
+                                switch result {
+                                case .success:
+                                    self.showAlertSuccess.toggle()
+                                case .failure(let error):
+                                    print(error)
+                                    presentationMode.wrappedValue.dismiss()
+                                }
+                            }
+                        }
+                    }) {
+                        Text("Save")
+                    }
+            )
+            .alert(isPresented: $showAlertError, content: {
+                           Alert(title: Text("Failed"), message: Text("Title Or Content Cannot Empty"), dismissButton: .default(Text("OK")))
+            })
+            .background(
+                EmptyView()
+                .alert(isPresented: $showAlertSuccess, content: {
+                    Alert(title: Text("Success"), message: Text("Report updated successfully."), dismissButton: .default(Text("OK")) {
+                        presentationMode.wrappedValue.dismiss()
+                    })
+                })
+            )
         }
     }
 }
 
+
+
 struct EditReportingUIView_Previews: PreviewProvider {
     static var previews: some View {
-        EditReportingUIView()
+        let report = Report(id: 1, title: "Sample Report", content: "This is a sample report", type: "Type A", status: "Approved", dosen_id: 1, status_id: 1, created_at: "2022-01-01", message: "This is a sample message")
+        EditReportingUIView(report: .constant(report), reportViewModel: ReportViewModel(report: report))
     }
 }
+

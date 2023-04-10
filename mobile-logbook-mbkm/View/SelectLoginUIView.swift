@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelectLoginUIView: View {
-    @ObservedObject var loginViewModel = LoginViewModel()
+    @EnvironmentObject var settings: LoginViewModel
 
     var body: some View {
         NavigationView {
@@ -19,7 +19,7 @@ struct SelectLoginUIView: View {
                 Text("Login Sebagai")
                     .font(.title2.bold().monospaced().smallCaps())
                 HStack{
-                    if loginViewModel.isAuthenticated{
+                    if settings.isAuthenticated{
                         HomeDosenUIView()
                     }else{
                         NavigationLink{
@@ -36,7 +36,7 @@ struct SelectLoginUIView: View {
                         .cornerRadius(10)
                     }
                     
-                    if loginViewModel.isAuthenticated{
+                    if settings.isAuthenticated{
                         HomeMahasiswaUIView()
                     }else{
                         NavigationLink{

@@ -96,7 +96,6 @@ class ReportingAPI {
     
     private init() {}
     
-    
     func insertReport(title: String, content: String, completion: @escaping (Result<Int, Error>) -> Void) {
         let request = RequestReporting(title: title, content: content)
         guard let requestData = try? JSONEncoder().encode(request) else {
@@ -143,8 +142,8 @@ enum APIError: Error {
 
 class ReportsListViewModel: ObservableObject {
     @Published var reportsPending: [Report] = []
-    @Published var reportsApproved: [Reports] = []
-    @Published var reportsReject: [Reports] = []
+    @Published var reportsApproved: [Report] = []
+    @Published var reportsReject: [Report] = []
     @Published var error: Error?
     @Published var countApproved: Int = 0
     @Published var countPending: Int = 0
@@ -153,8 +152,8 @@ class ReportsListViewModel: ObservableObject {
     private let baseUrl = "http://localhost:8080/api/reports"
     private let session = URLSession.shared
     let token = UserDefaults.standard.string(forKey: "token") ?? ""
+    
     func getPendingReports() {
-        
         guard let url = URL(string: "\(baseUrl)/pendingList") else { return }
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -191,6 +190,7 @@ class ReportsListViewModel: ObservableObject {
             }
         }.resume()
     }//MARK: getPending
+    
     func getApprovedReports() {
         guard let url = URL(string: "\(baseUrl)/approvedList") else { return }
         var request = URLRequest(url: url)
@@ -204,6 +204,7 @@ class ReportsListViewModel: ObservableObject {
                 }
                 return
             }
+            
             guard let httpResponse = response as? HTTPURLResponse,
                   (200..<300).contains(httpResponse.statusCode),
                   let data = data else {
@@ -212,12 +213,13 @@ class ReportsListViewModel: ObservableObject {
                 }
                 return
             }
+            
             do {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(ApprovedReportsResponse.self, from: data)
                 DispatchQueue.main.async {
-                    self.reportsApproved = response.approved
-                    self.countApproved = response.countApproved.approved
+                    self.reportsApproved = response.accepted
+                    self.countApproved = response.countApproved.accepted
                 }
             } catch let error {
                 DispatchQueue.main.async {
@@ -226,6 +228,7 @@ class ReportsListViewModel: ObservableObject {
             }
         }.resume()
     }//MARK: getApproved
+    
     func getRejectedReports() {
         guard let url = URL(string: "\(baseUrl)/rejectList") else { return }
         var request = URLRequest(url: url)
@@ -261,4 +264,139 @@ class ReportsListViewModel: ObservableObject {
             }
         }.resume()
     }//MARK: getApproved
+}
+
+class ReportViewModel: ObservableObject {
+    @Published var report: Report
+    @Published var message: String = ""
+
+    
+    
+    init(report: Report) {
+        self.report = report
+    }
+    
+    func editReport(title: String, content: String, completion: @escaping (Result<SuccessReportingResponse, Error>) -> Void) {
+        guard !title.isEmpty, !content.isEmpty else {
+                DispatchQueue.main.async {
+                    self.message = "Cannot Empty"
+                    completion(.failure(NetworkError.invalidRequestBody))
+                }
+                return
+            }
+
+        
+        let editReportRequest = EditReportRequest(title: title, content: content)
+        
+        guard let id = report.id else {
+            fatalError("Report ID is nil")
+        }
+
+        let url = URL(string: "http://localhost:8080/api/reports/\(id)")!
+        let token = UserDefaults.standard.string(forKey: "token") ?? ""
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(editReportRequest)
+        } catch {
+            completion(.failure(NetworkError.invalidRequestBody))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200,
+                  let data = data else {
+                completion(.failure(NetworkError.invalidResponse))
+                return
+            }
+            
+            do {
+                let successResponse = try JSONDecoder().decode(SuccessReportingResponse.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(successResponse))
+                }
+            } catch {
+                completion(.failure(NetworkError.invalidResponse))
+                print("Error while decoding response: \(error.localizedDescription)")
+            }
+        }.resume()
+    }
+}
+
+struct PostImageResponse: Codable {
+    let message: String
+    // add other properties as needed
+}
+
+class ViewModel:ObservableObject {
+    func uploadImages(for postId: Int, images: [Data], completion: @escaping (Result<PostImageResponse, Error>) -> Void) {
+        let urlString = "http://localhost:8080/api/reports/upload/img/\(postId)"
+        
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        let boundary = UUID().uuidString
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        let body = NSMutableData()
+        
+        for imageData in images {
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; name=\"images\"; filename=\"image.png\"\r\n".data(using: .utf8)!)
+            body.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
+            body.append(imageData)
+            body.append("\r\n".data(using: .utf8)!)
+        }
+        
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        request.httpBody = body as Data
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(NSError(domain: "Invalid Response", code: -1, userInfo: nil)))
+                return
+            }
+            
+            guard (200...299).contains(httpResponse.statusCode) else {
+                completion(.failure(NSError(domain: "HTTP Error", code: httpResponse.statusCode, userInfo: nil)))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(NSError(domain: "Invalid Data", code: -1, userInfo: nil)))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let response = try decoder.decode(PostImageResponse.self, from: data)
+                completion(.success(response))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        
+        task.resume()
+    }
 }

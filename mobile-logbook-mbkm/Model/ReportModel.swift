@@ -9,8 +9,8 @@ import Foundation
 
 struct Report: Identifiable, Decodable {
     let id: Int?
-    let title: String
-    let content: String
+    var title: String
+    var content: String
     let type: String
     let status: String
     let dosen_id: Int
@@ -37,22 +37,30 @@ struct PendingReportsResponse: Codable {
 
 
 struct ApprovedReportsResponse: Codable {
-    let approved: [Reports]
+    let accepted: [Report]
     let countApproved: CountApproved
     
     enum CodingKeys: String, CodingKey {
-        case approved
+        case accepted
         case countApproved = "count_accepted"
+    }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(countApproved, forKey: .countApproved)
     }
 }
 
 struct RejectedReportsResponse: Codable {
-    let reject: [Reports]
+    let reject: [Report]
     let countRejected: CountRejected
     
     enum CodingKeys: String, CodingKey {
         case reject
         case countRejected = "count_rejected"
+    }
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(countRejected, forKey: .countRejected)
     }
 }
 
@@ -61,7 +69,7 @@ struct CountPending: Codable {
     let pending: Int
 }
 struct CountApproved: Codable {
-    let approved: Int
+    let accepted: Int
 }
 struct CountRejected: Codable {
     let reject: Int
@@ -105,3 +113,8 @@ struct SuccessReportingResponse: Codable {
 struct UploadResponse: Decodable {
     let message: String
 }
+struct EditReportRequest: Codable {
+    let title: String
+    let content: String
+}
+
